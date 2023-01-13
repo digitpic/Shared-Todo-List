@@ -25,7 +25,7 @@ public class BoardController {
         return "";
     }
 
-    @PostMapping("/board/list")
+    @GetMapping("/board/list")
     public String boardList(){
         return "boardlist";
     }
