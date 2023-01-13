@@ -5,6 +5,7 @@ import com.study.board.serviece.BoardService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -26,7 +27,12 @@ public class BoardController {
     }
 
     @GetMapping("/board/list")
-    public String boardList(){
+    public String boardList(Model model){
+        model.addAttribute("list",boardService.boardList());
         return "boardlist";
+    }
+    @GetMapping("/board/view")
+    public String boardView(){
+        return "boardview";
     }
 }
