@@ -1,0 +1,18 @@
+main{
+    text-align:center;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.item{
+    width:170px;
+    border:2px solid red;
+}
+
+input{
+  border: 2px solid gray;
+}
+
+li{
+    display:inline-block;
+}
