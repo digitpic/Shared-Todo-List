@@ -51,7 +51,9 @@ public class BoardController {
 
         //POST 요청에 들어있는 content 값에 해당하는 노드를 DB에서 찾아오기
         Board modifiedBoard = boardService.find(board.getContent());
-        System.out.println(sdf.format(timestamp)+"Update : (old)" + modifiedBoard + " -> ");
+        System.out.println(sdf.format(timestamp)+"Update :");
+        System.out.println("(target) " + modifiedBoard);
+        System.out.print("(status) "+modifiedBoard.getComplete() + " → ");
 
         //complete가 0이면 1로
         if(modifiedBoard.getComplete() == 0){
@@ -63,7 +65,7 @@ public class BoardController {
             modifiedBoard.setComplete(0);
         }
 
-        System.out.println("(new) "+ modifiedBoard);
+        System.out.println(modifiedBoard.getComplete());
 
         //변경된 데이터를 DB에 저장하기 (update)
         boardService.write(modifiedBoard);
