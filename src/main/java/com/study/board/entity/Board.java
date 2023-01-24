@@ -15,3 +15,4 @@ public class Board { //JPA가 이 엔티티를 읽는다
     private String content;
     private Integer complete;
 }
+
